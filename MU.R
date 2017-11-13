@@ -20,3 +20,17 @@ summary(util)
 util$Timestamp <- NULL
 head(util,12)
 util <- util[,c(4,1,2,3)]
+RL1 <- util[util$Machine=="RL1",]
+summary(RL1)
+RL1$Machine <- factor(RL1$Machine)
+#Construct List 
+util_stats_rl1 <- c(min(RL1$Utilization, na.rm=T),
+                    mean(RL1$Utilization, na.rm=T),
+                    max(RL1$Utilization, na.rm=T))
+util_stats_rl1
+#which give use the TRUE's and ignores NA's !
+length(which(RL1$Utilization < 0.90)) > 0
+#another alt
+util_under_90_flag <- as.logical(length(which(RL1$Utilization < 0.90)))
+util_under_90
+list_rl1
