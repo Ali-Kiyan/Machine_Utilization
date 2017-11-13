@@ -58,3 +58,17 @@ typeof(list_rl1[2])
 typeof(list_rl1[[2]])
 typeof(list_rl1$Stats)
 list_rl1$Stats[3]
+#Adding and deleting list component
+list_rl1[6] <- "New Information"
+# via $
+#a all hours where Utilization is unkwnown
+list_rl1$UnknownHours <- RL1[is.na(RL1$Utilization),"PosixTime"]
+#remove a component
+list_rl1[5] <- NULL
+#Note that nomeration is changed here
+list_rl1[4]
+#Data frame: For this machine
+list_rl1$Data <- RL1
+summary(list_rl1)
+#In R everything is a vector 
+str(list_rl1)
