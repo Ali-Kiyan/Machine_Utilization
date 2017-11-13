@@ -57,3 +57,4 @@ list_rl1[2]
 typeof(list_rl1[2])
 typeof(list_rl1[[2]])
 typeof(list_rl1$Stats)
+list_rl1$Stats[3]
