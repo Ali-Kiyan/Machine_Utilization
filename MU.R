@@ -32,5 +32,12 @@ util_stats_rl1
 length(which(RL1$Utilization < 0.90)) > 0
 #another alt
 util_under_90_flag <- as.logical(length(which(RL1$Utilization < 0.90)))
-util_under_90
+util_under_90_flag
+list_rl1 <- list("RL1",util_stats_rl1,util_under_90_flag)
+#Naming Components of a list
 list_rl1
+names(list_rl1)
+names(list_rl1) <- c("Mahcine", "Stats", "LowThreshhold")
+#alternative way 
+rm(list_rl1)
+list_rl1 <- list(Machine="RL1", Stats=util_stats_rl1, LowThreshold=util_under_90_flag)
