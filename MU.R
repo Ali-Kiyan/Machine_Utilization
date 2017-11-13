@@ -72,3 +72,7 @@ list_rl1$Data <- RL1
 summary(list_rl1)
 #In R everything is a vector 
 str(list_rl1)
+#Subsetting a list 
+list_rl1[1:3]
+list_rl1[c(1,4)]
+sublist_rl1 <- list_rl1[c("Machine","Stats")]
