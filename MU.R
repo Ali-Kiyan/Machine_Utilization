@@ -71,8 +71,12 @@ list_rl1[4]
 list_rl1$Data <- RL1
 summary(list_rl1)
 #In R everything is a vector 
-str(list_rl1)
+str(list_rl1) 
 #Subsetting a list 
 list_rl1[1:3]
 list_rl1[c(1,4)]
 sublist_rl1 <- list_rl1[c("Machine","Stats")]
+library("ggplot2")
+p <- ggplot(data=util)
+p + geom_line(aes(x=PosixTime, y=Utilization,colour=Machine), size=1.2) +
+facet_grid(Machine~.) + 
